@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>pineapple.com — DOP IS COMING</title>
+
+<style>
+    body {
+        background: black;
+        color: lime;
+        font-family: "Comic Sans MS", "Courier New", monospace;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    marquee {
+        background: yellow;
+        color: black;
+        font-size: 24px;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    h1 {
+        font-size: 48px;
+        text-shadow: 3px 3px red;
+    }
+
+    .box {
+        border: 4px dashed lime;
+        margin: 20px auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 700px;
+        background: #001100;
+    }
+
+    .blink {
+        animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+        to { visibility: hidden; }
+    }
+
+    .counter {
+        font-size: 28px;
+        background: black;
+        border: 3px solid red;
+        padding: 15px;
+        margin-top: 15px;
+    }
+
+    footer {
+        margin: 40px;
+        font-size: 12px;
+        color: gray;
+    }
+
+    a {
+        color: cyan;
+    }
+</style>
+</head>
+
+<body>
+
+<marquee behavior="alternate" scrollamount="10">
+🍍🍍🍍 DOP IS COMING — DAY OF THE PINEAPPLE 🍍🍍🍍
+</marquee>
+
+<h1>WELCOME TO PINEAPPLE.COM</h1>
+
+<p class="blink">THIS SITE IS OFFICIALLY UNOFFICIAL</p>
+
+<div class="box">
+    <h2>WHAT IS DOP?</h2>
+    <p>
+        <strong>DOP</strong> = <strong>DAY OF THE PINEAPPLE</strong><br><br>
+        On <strong>JANUARY 14, 2027</strong>, pineapples
+        will take over the world.<br>
+        Governments will fall.<br>
+        Juice will rise.
+    </p>
+</div>
+
+<div class="box">
+    <h2>⏳ COUNTDOWN TO GLOBAL PINEAPPLE CONTROL ⏳</h2>
+    <div id="countdown" class="counter">
+        CALCULATING...
+    </div>
+</div>
+
+<div class="box">
+    <h2>PINEAPPLE DIRECTIVES</h2>
+    <ul style="list-style:none; padding:0;">
+        <li>🍍 Surrender all non-pineapple fruit</li>
+        <li>🍍 Accept spiky leadership</li>
+        <li>🍍 Pizza debates shall end</li>
+        <li>🍍 Tropical law is absolute</li>
+    </ul>
+</div>
+
+<div class="box">
+    <h2>HOW TO PREPARE</h2>
+    <p>
+        ✔ Stock pineapple<br>
+        ✔ Learn pineapple facts<br>
+        ✔ Do NOT resist<br>
+        ✔ Wear yellow (optional but encouraged)
+    </p>
+</div>
+
+<div class="box">
+    <h2>SPREAD THE TRUTH</h2>
+    <p>
+        Send this website to friends.<br>
+        Pineapple awareness is mandatory.
+    </p>
+    <p>
+        <a href="#">Join the Pineapple Resistance (or not)</a>
+    </p>
+</div>
+
+<footer>
+    © 2026–2027 pineapple.com<br>
+    Best viewed at 800x600<br>
+    <span class="blink">UNDER CONSTRUCTION</span><br><br>
+    *This is satire. The pineapples told us to say that.
+</footer>
+
+<script>
+    const dopDate = new Date("January 14, 2027 00:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = dopDate - now;
+
+        if (diff <= 0) {
+            document.getElementById("countdown").innerHTML =
+                "🍍 DOP HAS ARRIVED 🍍<br>SUBMIT IMMEDIATELY";
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("countdown").innerHTML =
+            days + " DAYS " +
+            hours + " HOURS " +
+            minutes + " MINUTES " +
+            seconds + " SECONDS";
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
+
+</body>
+</html>
